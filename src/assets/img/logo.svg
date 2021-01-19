@@ -1,0 +1,19 @@
+<svg width="1024" height="768" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_2_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="770" width="1026" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <text filter="url(#svg_2_blur)" stroke-dasharray="5,2,2,2,2,2" font-style="normal" font-weight="normal" stroke="#000" transform="matrix(10.873079837454371,0,0,12.813480325147655,-2061.861868496888,-1988.8963813193782) " xml:space="preserve" text-anchor="start" font-family="'Calistoga'" font-size="30" id="svg_2" y="196" x="190" stroke-width="0" fill="#000000">CHOIX</text>
+ </g>
+</svg>
