@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 
+// eslint-disable-next-line react/prop-types
 function Categories({ items }) {
   const [activeItem, setActiveItem] = useState(null);
 
@@ -13,6 +14,7 @@ function Categories({ items }) {
           Все
         </li>
         {items &&
+          // eslint-disable-next-line react/prop-types
           items.map((name, index) => (
             <li
               className={activeItem === index ? 'active' : ''}
