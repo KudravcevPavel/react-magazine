@@ -3,9 +3,9 @@
     {
       "id": 0,
       "imageUrl": "https://images.by.prom.st/194079020_w640_h640_194079020.jpg",
-      "name": "КРОВАТЬ НИКОЛЬ С ЯЩИКАМИ",
+      "name": "КРОВАТЬ НИКОЛЬ",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [0, 1, 2],
       "price": 360,
       "category": 0,
       "rating": 4
@@ -15,7 +15,7 @@
       "imageUrl": "https://images.by.prom.st/193308717_w640_h640_193308717.jpg",
       "name": "СТЕЛЛАЖ РИО",
       "types": [0],
-      "sizes": [26, 40],
+      "sizes": [1],
       "price": 65,
       "category": 1,
       "rating": 6
@@ -25,7 +25,7 @@
       "imageUrl": "https://images.by.prom.st/204570548_w640_h640_204570548.jpg",
       "name": "КОМОД ТОРИ",
       "types": [0],
-      "sizes": [26, 40],
+      "sizes": [0, 1, 2],
       "price": 279,
       "category": 1,
       "rating": 4
@@ -35,7 +35,7 @@
       "imageUrl": "https://images.by.prom.st/204575570_w640_h640_204575570.jpg",
       "name": "КОМОД ТОРИ-2",
       "types": [1],
-      "sizes": [26, 30, 40],
+      "sizes":  [0, 1, 2],
       "price": 227,
       "category": 2,
       "rating": 2
@@ -43,9 +43,9 @@
     {
       "id": 4,
       "imageUrl": "https://images.by.prom.st/210462013_w640_h640_210462013.jpg",
-      "name": "КРОВАТЬ НИКОЛЬ ВИГВАМ С ЯЩИКАМИ",
+      "name": "КРОВАТЬ НИКОЛЬ ВИГВАМ",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [0, 1],
       "price": 490,
       "category": 3,
       "rating": 8
@@ -55,7 +55,7 @@
       "imageUrl": "https://images.by.prom.st/213822708_w640_h640_213822708.jpg",
       "name": "ПИСЬМЕННЫЙ СТОЛ ЛЕО",
       "types": [0],
-      "sizes": [30, 40],
+      "sizes": [0, 1, 2],
       "price": 299,
       "category": 2,
       "rating": 2
@@ -65,7 +65,7 @@
       "imageUrl": "https://images.by.prom.st/214001160_w640_h640_214001160.jpg",
       "name": "КОМОД ЛЕО",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [1, 2],
       "price": 290,
       "category": 1,
       "rating": 9
@@ -75,7 +75,7 @@
       "imageUrl": "https://images.by.prom.st/215807654_w640_h640_215807654.jpg",
       "name": "ПРИКРОВАТНАЯ ТУМБА ЛЕО",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes":  [0, 1, 2],
       "price": 199,
       "category": 4,
       "rating": 10
@@ -85,8 +85,7 @@
       "imageUrl": "https://images.by.prom.st/215808752_w640_h640_215808752.jpg",
       "name": "ПОЛКА ХИТ",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
-      "price": 33,
+      "sizes":  [0, 1],
       "category": 5,
       "rating": 10
     },
@@ -95,10 +94,10 @@
       "imageUrl": "https://images.by.prom.st/216691830_w640_h640_216691830.jpg",
       "name": "ШКАФ ЛЕО",
       "types": [0, 1],
-      "sizes": [26, 30, 40],
+      "sizes": [0, 2],
       "price": 290,
       "category": 5,
       "rating": 7
-    }
+    }    
   ]
 }

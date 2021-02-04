@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 
-import { Categories, SortPopup, PizzaBlock } from '../components';
+import { Categories, SortPopup, MebelBlock } from '../components';
 
 function Home({ items }) {
   return (
@@ -12,12 +12,18 @@ function Home({ items }) {
           onClickItem={(name) => console.log(name)}
           items={['Кровати', 'Комоды', 'Стелажи', 'Тумбы', 'Столы']}
         />
-        <SortPopup items={['популярности', 'цене', 'алфавиту']} />
+        <SortPopup
+          items={[
+            { name: 'популярности', type: 'popular' },
+            { name: 'цене', type: 'price' },
+            { name: 'алфавиту', type: 'alphabet' },
+          ]}
+        />
       </div>
       <h2 className="content__title">Все товары</h2>
       <div className="content__items">
         {items.map((obj) => (
-          <PizzaBlock key={obj.id} {...obj} />
+          <MebelBlock key={obj.id} {...obj} />
         ))}
       </div>
     </div>
