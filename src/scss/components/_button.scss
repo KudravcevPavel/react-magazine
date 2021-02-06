@@ -2,7 +2,7 @@
 
 .button {
   display: inline-block;
-  background-color: $orange;
+  background-color: #282828;
   border-radius: 30px;
   padding: 10px 20px;
   min-width: 100px;
@@ -25,11 +25,11 @@
   }
 
   &:hover {
-    background-color: darken($orange, 8%);
+    background-color: darken(#282828, 8%);
   }
 
   &:active {
-    background-color: darken($orange, 12%);
+    background-color: darken(#282828, 12%);
     transform: translateY(1px);
   }
 
@@ -55,10 +55,10 @@
 
   &--outline {
     background-color: #fff;
-    border-color: $orange;
+    border-color: #282828;
     &,
     span {
-      color: $orange;
+      color: #282828;
     }
 
     svg {
@@ -133,7 +133,7 @@
     display: flex;
     align-items: center;
     line-height: 23px;
-    padding: 8px 20px;
+    padding: 5px 17px;
 
     svg {
       margin-right: 8px;

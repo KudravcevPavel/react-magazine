@@ -10,7 +10,13 @@ const filters = (state = initialState, action) => {
       sortBy: acti0n.payload,
     };
   }
+  if (action.type === 'SET_CATEGORY') {
+    return {
+      ...state,
+      category: acti0n.payload,
+    };
+  }
   return state;
 };
 
-expect default filters;
+export default filters;
