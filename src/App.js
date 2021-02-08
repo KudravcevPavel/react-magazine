@@ -1,56 +1,31 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
-import { connect } from 'react-redux';
-/* import store from './redux/store'; */
+import { useDispatch } from 'react-redux';
 
 import { Header } from './components';
 import { Home, Cart } from './pages';
 import { Route } from 'react-router-dom';
 
-import { setMebel as setMebelAction } from './redux/actions/mebel';
+import { setMebel } from './redux/actions/mebel';
 
-/* function App() {
+function App() {
+  const dispatch = useDispatch();
   React.useEffect(() => {
-    fetch('http://localhost:3000/db.json')
+    fetch('http://localhost:3001/mebel')
       .then((resp) => resp.json())
       .then((json) => {
-        setPizzas(json.pizzas);
+        dispatch(setMebel(json));
       });
   }, []);
-
-  return;
-}
- */
-class App extends React.Component {
-  componentDidMount() {
-    fetch('http://localhost:3000/db.json')
-      .then((resp) => resp.json())
-      .then((json) => {
-        this.props.setMebel(json.mebel);
-      });
-  }
-  render() {
-    return (
-      <div className="wrapper">
-        <Header />
-        <div className="content">
-          <Route path="/" render={() => <Home items={this.props.items} />} exact />
-          <Route path="/cart" component={Cart} exact />
-        </div>
+  return (
+    <div className="wrapper">
+      <Header />
+      <div className="content">
+        <Route path="/" component={Home} exact />
+        <Route path="/cart" component={Cart} exact />
       </div>
-    );
-  }
+    </div>
+  );
 }
-const mapStateToProps = (state) => {
-  return {
-    items: state.mebel.items,
-  };
-};
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    setMebel: (items) => dispatch(setMebelAction(items)),
-  };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;

@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
+// eslint-disable-next-line react/prop-types
+// eslint-disable-next-line react/prop-types
 import React, { useState, useEffect, useRef } from 'react';
 
-// eslint-disable-next-line react/prop-types
-function SortPopup({ items }) {
+const SortPopup = React.memo(function SortPopup({ items }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const [activeItem, setActiveItem] = useState(0);
   const sortRef = useRef();
@@ -49,7 +50,6 @@ function SortPopup({ items }) {
         <div className="sort__popup">
           <ul>
             {items &&
-              // eslint-disable-next-line react/prop-types
               items.map((obj, index) => (
                 <li
                   onClick={() => onSelectItem(index)}
@@ -63,6 +63,6 @@ function SortPopup({ items }) {
       )}
     </div>
   );
-}
+});
 
 export default SortPopup;
