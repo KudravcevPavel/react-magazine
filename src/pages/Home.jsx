@@ -31,7 +31,7 @@ function Home() {
     dispatch(setSortBy(type));
   }, []);
 
-  const handleAddMebelToCart = (obj) => {
+  const addMebelToCart = (obj) => {
     dispatch({ type: 'ADD_MEBEL_CART', payload: obj });
   };
 
@@ -54,7 +54,7 @@ function Home() {
         {items
           ? items.map((obj) => (
               <MebelBlock
-                onClickAddMebel={handleAddMebelToCart}
+                onClickAddMebel={addMebelToCart}
                 key={obj.id}
                 addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
                 {...obj}
