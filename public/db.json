@@ -17,7 +17,7 @@
       "types": [0],
       "sizes": [1],
       "price": 65,
-      "category": 1,
+      "category": 2,
       "rating": 6
     },
     {
@@ -37,7 +37,7 @@
       "types": [1],
       "sizes":  [0, 1, 2],
       "price": 227,
-      "category": 2,
+      "category": 1,
       "rating": 2
     },
     {
@@ -47,7 +47,7 @@
       "types": [0, 1],
       "sizes": [0, 1],
       "price": 490,
-      "category": 3,
+      "category": 0,
       "rating": 8
     },
     {
@@ -57,7 +57,7 @@
       "types": [0],
       "sizes": [0, 1, 2],
       "price": 299,
-      "category": 2,
+      "category": 4,
       "rating": 2
     },
     {
@@ -77,7 +77,7 @@
       "types": [0, 1],
       "sizes":  [0, 1, 2],
       "price": 199,
-      "category": 4,
+      "category": 3,
       "rating": 10
     },
     {
@@ -86,7 +86,8 @@
       "name": "ПОЛКА ХИТ",
       "types": [0, 1],
       "sizes":  [0, 1],
-      "category": 5,
+      "price": 33,
+      "category": 2,
       "rating": 10
     },
     {
@@ -98,6 +99,26 @@
       "price": 290,
       "category": 5,
       "rating": 7
-    }    
+    },
+    {
+      "id": 10,
+      "imageUrl": "https://images.by.prom.st/129753166_w640_h640_129753166.jpg",
+      "name": "СТОЛ МОДЕРН",
+      "types": [0, 1],
+      "sizes": [0, 2],
+      "price": 959,
+      "category": 4,
+      "rating": 7
+    },
+    {
+      "id": 11,
+      "imageUrl": "https://images.by.prom.st/129594921_w640_h640_129594921.jpg",
+      "name": "ТУМБА ТВ ХТВ-3",
+      "types": [0, 1],
+      "sizes": [0, 2],
+      "price": 696,
+      "category": 3,
+      "rating": 7
+    }        
   ]
 }

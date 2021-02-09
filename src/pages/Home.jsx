@@ -1,36 +1,68 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
-import { Categories, SortPopup, MebelBlock } from '../components';
-
-import { setCategory } from '../redux/actions/filters';
+import { Categories, SortPopup, MebelBlock, MebelLoadingBlock } from '../components';
+import { setCategory, setSortBy } from '../redux/actions/filters';
+import { fetchMebel } from '../redux/actions/mebel';
+import { addMebelToCart } from '../redux/actions/cart';
 
 const categoryNames = ['Кровати', 'Комоды', 'Стелажи', 'Тумбы', 'Столы'];
+const sortItems = [
+  { name: 'популярности', type: 'popular', order: 'desc' },
+  { name: 'цене', type: 'price', order: 'desc' },
+  { name: 'алфавиту', type: 'name', order: 'asc' },
+];
 
 function Home() {
   const dispatch = useDispatch();
-
   const items = useSelector(({ mebel }) => mebel.items);
+  const cartItems = useSelector(({ cart }) => cart.items);
+  const isLoaded = useSelector(({ mebel }) => mebel.isLoaded);
+  const { category, sortBy } = useSelector(({ filters }) => filters);
+
+  React.useEffect(() => {
+    dispatch(fetchMebel(sortBy, category));
+  }, [category, sortBy]);
 
   const onSelectCategory = React.useCallback((index) => {
     dispatch(setCategory(index));
   }, []);
 
+  const onSelectSortType = React.useCallback((type) => {
+    dispatch(setSortBy(type));
+  }, []);
+
+  const handleAddMebelToCart = (obj) => {
+    dispatch({ type: 'ADD_MEBEL_CART', payload: obj });
+  };
+
   return (
     <div className="container">
       <div className="content__top">
-        <Categories onClickItem={onSelectCategory} items={categoryNames} />
+        <Categories
+          activeCategory={category}
+          onClickCategory={onSelectCategory}
+          items={categoryNames}
+        />
         <SortPopup
-          items={[
-            { name: 'популярности', type: 'popular' },
-            { name: 'цене', type: 'price' },
-            { name: 'алфавиту', type: 'alphabet' },
-          ]}
+          activeSortType={sortBy.type}
+          items={sortItems}
+          onClickSortType={onSelectSortType}
         />
       </div>
       <h2 className="content__title">Все товары</h2>
       <div className="content__items">
-        {items && items.map((obj) => <MebelBlock key={obj.id} {...obj} />)}
+        {items
+          ? items.map((obj) => (
+              <MebelBlock
+                onClickAddMebel={handleAddMebelToCart}
+                key={obj.id}
+                addedCount={cartItems[obj.id] && cartItems[obj.id].items.length}
+                {...obj}
+              />
+            ))
+          : Array(12)
+              .fill(0)
+              .map((_, index) => <MebelLoadingBlock key={index} />)}
       </div>
     </div>
   );

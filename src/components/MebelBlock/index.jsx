@@ -1,20 +1,33 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import classNames from 'classnames';
-/* eslint-disable react/jsx-key */
+import propTypes from 'prop-types';
+import Button from '../Button';
 
-function MebelBlock({ name, imageUrl, price, types, sizes }) {
+function MebelBlock({ id, name, imageUrl, price, types, sizes, onClickAddMebel, addedCount }) {
   const avaibleTypes = ['Массив', 'ЛДСП'];
   const avaibleSizes = ['Серая', 'Белая', 'Черная'];
 
   const [activeType, setActiveType] = React.useState(types[0]);
-  const [activeSize, setActiveSize] = React.useState(sizes[0]);
+  const [activeSize, setActiveSize] = React.useState(0);
 
   const onSelectType = (index) => {
     setActiveType(index);
   };
   const onSelectSize = (index) => {
     setActiveSize(index);
+  };
+
+  const onAddMebel = () => {
+    const obj = {
+      id,
+      name,
+      imageUrl,
+      price,
+      size: avaibleSizes[activeSize],
+      type: avaibleTypes[activeType],
+    };
+    onClickAddMebel(obj);
   };
 
   return (
@@ -42,7 +55,7 @@ function MebelBlock({ name, imageUrl, price, types, sizes }) {
               onClick={() => onSelectSize(index)}
               className={classNames({
                 active: activeSize === index,
-                disabled: !sizes.includes(index),
+                disabled: !sizes.includes(size),
               })}>
               {size}
             </li>
@@ -51,7 +64,7 @@ function MebelBlock({ name, imageUrl, price, types, sizes }) {
       </div>
       <div className="mebel-block__bottom">
         <div className="mebel-block__price">{price}</div>
-        <div className="button button--outline button--add">
+        <Button onClick={onAddMebel} className="button--add" outline>
           <svg
             width="12"
             height="12"
@@ -64,11 +77,28 @@ function MebelBlock({ name, imageUrl, price, types, sizes }) {
             />
           </svg>
           <span>Добавить</span>
-          <i>2</i>
-        </div>
+          {addedCount && <i>{addedCount}</i>}
+        </Button>
       </div>
     </div>
   );
 }
+
+MebelBlock.propTypes = {
+  name: propTypes.string,
+  imageUrl: propTypes.string,
+  price: propTypes.number,
+  types: propTypes.arrayOf(propTypes.number),
+  sizes: propTypes.arrayOf(propTypes.number),
+  onAddMebel: propTypes.func,
+  addedCount: propTypes.number,
+};
+
+MebelBlock.defaultProps = {
+  name: '---',
+  price: 0,
+  types: [],
+  sizes: [],
+};
 
 export default MebelBlock;

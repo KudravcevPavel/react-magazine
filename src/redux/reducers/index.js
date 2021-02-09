@@ -1,10 +1,12 @@
 import { combineReducers } from 'redux';
-import filtersReducer from './filter';
-import mebelReducer from './mebel';
+import filters from './filter';
+import mebel from './mebel';
+import cart from './cart';
 
 const rootReducer = combineReducers({
-  filters: filtersReducer,
-  mebel: mebelReducer,
+  filters,
+  mebel,
+  cart,
 });
 
 export default rootReducer;
