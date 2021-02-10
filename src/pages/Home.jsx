@@ -16,7 +16,7 @@ function Home() {
   const dispatch = useDispatch();
   const items = useSelector(({ mebel }) => mebel.items);
   const cartItems = useSelector(({ cart }) => cart.items);
-  const isLoaded = useSelector(({ mebel }) => mebel.isLoaded);
+  const isLoaded = useSelector(({ mebel }) => mebel.isLoading);
   const { category, sortBy } = useSelector(({ filters }) => filters);
 
   React.useEffect(() => {
@@ -51,7 +51,7 @@ function Home() {
       </div>
       <h2 className="content__title">Все товары</h2>
       <div className="content__items">
-        {items
+        {isLoaded
           ? items.map((obj) => (
               <MebelBlock
                 onClickAddMebel={addMebelToCart}
